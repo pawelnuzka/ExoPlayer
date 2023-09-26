@@ -31,9 +31,11 @@ import android.media.MediaCodec;
 import android.media.MediaCodecInfo;
 import android.util.Pair;
 import android.view.Surface;
+
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
-import androidx.media3.common.VideoGraph;
+import androidx.media3.common.VideoGraphExo;
+
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.decoder.DecoderInputBuffer;
@@ -52,11 +54,13 @@ import com.google.android.exoplayer2.util.VideoFrameProcessor;
 import com.google.android.exoplayer2.video.ColorInfo;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.MoreExecutors;
-import java.nio.ByteBuffer;
-import java.util.List;
+
 import org.checkerframework.checker.initialization.qual.Initialized;
 import org.checkerframework.checker.nullness.qual.MonotonicNonNull;
 import org.checkerframework.dataflow.qual.Pure;
+
+import java.nio.ByteBuffer;
+import java.util.List;
 
 /**
  * Processes, encodes and muxes raw video frames.
@@ -476,7 +480,7 @@ import org.checkerframework.dataflow.qual.Pure;
     }
   }
 
-  private final class VideoGraphWrapper implements TransformerVideoGraph, VideoGraph.Listener {
+  private final class VideoGraphWrapper implements TransformerVideoGraph, VideoGraphExo.Listener {
 
     private final TransformerVideoGraph videoGraph;
     private final Consumer<ExportException> errorConsumer;

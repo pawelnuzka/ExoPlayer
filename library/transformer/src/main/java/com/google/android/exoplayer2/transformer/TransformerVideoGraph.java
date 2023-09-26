@@ -17,7 +17,7 @@
 package com.google.android.exoplayer2.transformer;
 
 import android.content.Context;
-import androidx.media3.common.VideoGraph;
+import androidx.media3.common.VideoGraphExo;
 import com.google.android.exoplayer2.effect.VideoCompositorSettings;
 import com.google.android.exoplayer2.util.DebugViewProvider;
 import com.google.android.exoplayer2.util.Effect;
@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.concurrent.Executor;
 
 /**
- * The {@link VideoGraph} to support {@link Transformer} specific use cases.
+ * The {@link VideoGraphExo} to support {@link Transformer} specific use cases.
  *
  * @deprecated com.google.android.exoplayer2 is deprecated. Please migrate to androidx.media3 (which
  *     contains the same ExoPlayer code). See <a
@@ -36,7 +36,7 @@ import java.util.concurrent.Executor;
  *     migration guide</a> for more details, including a script to help with the migration.
  */
 @Deprecated
-/* package */ interface TransformerVideoGraph extends VideoGraph {
+/* package */ interface TransformerVideoGraph extends VideoGraphExo {
 
   /** A factory for creating a {@link TransformerVideoGraph}. */
   interface Factory {

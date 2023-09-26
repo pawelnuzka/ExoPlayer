@@ -22,7 +22,7 @@ import static com.google.android.exoplayer2.util.Assertions.checkStateNotNull;
 
 import android.content.Context;
 import androidx.annotation.Nullable;
-import androidx.media3.common.VideoGraph;
+import androidx.media3.common.VideoGraphExo;
 import com.google.android.exoplayer2.effect.Presentation;
 import com.google.android.exoplayer2.effect.VideoCompositorSettings;
 import com.google.android.exoplayer2.util.DebugViewProvider;
@@ -36,7 +36,7 @@ import java.util.List;
 import java.util.concurrent.Executor;
 
 /**
- * A {@link VideoGraph} that handles one input stream.
+ * A {@link VideoGraphExo} that handles one input stream.
  *
  * @deprecated com.google.android.exoplayer2 is deprecated. Please migrate to androidx.media3 (which
  *     contains the same ExoPlayer code). See <a
@@ -44,7 +44,7 @@ import java.util.concurrent.Executor;
  *     migration guide</a> for more details, including a script to help with the migration.
  */
 @Deprecated
-/* package */ abstract class SingleInputVideoGraph implements VideoGraph {
+/* package */ abstract class SingleInputVideoGraph implements VideoGraphExo {
 
   private final Context context;
   private final VideoFrameProcessor.Factory videoFrameProcessorFactory;

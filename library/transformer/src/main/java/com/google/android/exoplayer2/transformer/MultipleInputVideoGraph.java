@@ -33,7 +33,7 @@ import android.opengl.EGLDisplay;
 import android.opengl.EGLSurface;
 import android.util.SparseArray;
 import androidx.annotation.Nullable;
-import androidx.media3.common.VideoGraph;
+import androidx.media3.common.VideoGraphExo;
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.effect.DefaultGlObjectsProvider;
 import com.google.android.exoplayer2.effect.DefaultVideoCompositor;
@@ -61,7 +61,7 @@ import java.util.concurrent.ExecutorService;
 import org.checkerframework.checker.nullness.qual.MonotonicNonNull;
 
 /**
- * A {@link VideoGraph} that handles multiple input streams.
+ * A {@link VideoGraphExo} that handles multiple input streams.
  *
  * @deprecated com.google.android.exoplayer2 is deprecated. Please migrate to androidx.media3 (which
  *     contains the same ExoPlayer code). See <a

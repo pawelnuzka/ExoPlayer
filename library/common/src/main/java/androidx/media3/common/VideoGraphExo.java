@@ -18,6 +18,9 @@ package androidx.media3.common;
 
 import androidx.annotation.Nullable;
 
+import com.google.android.exoplayer2.util.SurfaceInfo;
+import com.google.android.exoplayer2.util.VideoFrameProcessingException;
+
 /**
  * Represents a graph for processing decoded video frames.
  *
@@ -27,7 +30,7 @@ import androidx.annotation.Nullable;
  *     migration guide</a> for more details, including a script to help with the migration.
  */
 @Deprecated
-public interface VideoGraph {
+public interface VideoGraphExo {
 
   /** Listener for video frame processing events. */
   interface Listener {
@@ -40,7 +43,7 @@ public interface VideoGraph {
     void onOutputSizeChanged(int width, int height);
 
     /**
-     * Called after the {@link VideoGraph} has rendered its final output frame.
+     * Called after the {@link VideoGraphExo} has rendered its final output frame.
      *
      * @param finalFramePresentationTimeUs The timestamp of the last output frame, in microseconds.
      */
@@ -49,7 +52,7 @@ public interface VideoGraph {
     /**
      * Called when an exception occurs during video frame processing.
      *
-     * <p>If this is called, the calling {@link VideoGraph} must immediately be {@linkplain
+     * <p>If this is called, the calling {@link VideoGraphExo} must immediately be {@linkplain
      * #release() released}.
      */
     void onError(VideoFrameProcessingException exception);
